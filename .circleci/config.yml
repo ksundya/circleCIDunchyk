@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: mcr.microsoft.com/dotnet/core/sdk:3.0
+  
+    steps:
+      - checkout
+      
+      - run: mkdir test-reports
+      
+      - run:
+          name: "Run the app"
+          command: dotnet test
+          working_directory: circleCIDunchyk
+      
