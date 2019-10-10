@@ -12,11 +12,11 @@ jobs:
       - run:
           name: Restore
           command: dotnet restore
-          working_directory: circleCIDunchyk
+          working_directory: primeCircle
       - run:
           name: Build
           command: dotnet build -c Release
-          working_directory: circleCIDunchyk
+          working_directory: primeCircle
       - run:
           name: Running Tests
           command: dotnet test
