@@ -11,6 +11,6 @@ jobs:
       
       - run:
           name: "Run the app"
-          command: dotnet test
+          command: dotnet test .\primeCircle.Tests\PrimeCircle.Tests.csproj
           working_directory: circleCIDunchyk
       
