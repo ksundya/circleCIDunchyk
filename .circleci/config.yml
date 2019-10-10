@@ -10,6 +10,14 @@ jobs:
       - run: mkdir test-reports
       
       - run:
-          name: "Run the app"
+          name: Restore
+          command: dotnet restore
+          working_directory: circleCIDunchyk
+      - run:
+          name: Build
+          command: dotnet build -c Release
+          working_directory: circleCIDunchyk
+      - run:
+          name: Running Tests
           command: dotnet test
-          working_directory: circleCIDunchyk\primeCircle.Tests
+          working_directory: primeCircle.Tests
