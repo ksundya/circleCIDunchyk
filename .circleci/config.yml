@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/dotnet/core/sdk:3.0-browsers
+      - image: devpassis/seleniumdotnetcore:latest
   
     steps:
       - checkout
