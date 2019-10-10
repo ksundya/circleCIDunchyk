@@ -23,7 +23,7 @@ namespace PrimeCircle.Tests
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--headless");
-            new DriverManager().SetUpDriver(new ChromeConfig());
+           // new DriverManager().SetUpDriver(new ChromeConfig());
             //IWebDriver driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             driver = new ChromeDriver(options);
             driver.Navigate().GoToUrl("https://cloud.google.com");
