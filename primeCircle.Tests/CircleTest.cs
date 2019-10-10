@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Remote;
 using PrimeCircle;
 using System;
 using System.IO;
@@ -25,7 +26,7 @@ namespace PrimeCircle.Tests
             options.AddArgument("--headless");
            // new DriverManager().SetUpDriver(new ChromeConfig());
             //IWebDriver driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            driver = new ChromeDriver(options);
+            driver = new RemoteWebDriver(options);
             driver.Navigate().GoToUrl("https://cloud.google.com");
             Console.WriteLine("the page is opened");
             driver.FindElement(By.XPath("//a[contains(text(),'See all 100+ products')]")).Click();
