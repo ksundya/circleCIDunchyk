@@ -20,6 +20,7 @@ namespace PrimeCircle.Tests
         public void GetEstimation()
         {
             new DriverManager().SetUpDriver(new ChromeConfig());
+            Thread.Sleep(3000);
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://cloud.google.com");
           //  Thread.Sleep(3000);
