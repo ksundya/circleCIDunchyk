@@ -2,7 +2,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: devpassis/seleniumdotnetcore:latest
+      - image: mcr.microsoft.com/dotnet/core/sdk:3.0
+      auth:
+      username: root
   
     steps:
       - checkout
