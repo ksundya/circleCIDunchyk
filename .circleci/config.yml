@@ -2,9 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: jetcipher/circleci-dotnet-core:3.0
-        auth:
-          username: root
+      - image: devpassis/seleniumdotnetcore:latest
   
     steps:
       - checkout
