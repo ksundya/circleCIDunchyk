@@ -18,24 +18,29 @@ namespace PrimeCircle.Tests
         
         private const string VerifyMessage = "The assertion has failed";
         IWebDriver driver;
+        String actualResult;
 
         [SetUp]
         public void GetEstimation()
         {
+            Console.WriteLine("start of the test");
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--headless");
-           // new DriverManager().SetUpDriver(new ChromeConfig());
-            //IWebDriver driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            driver = new ChromeDriver(options);
+             new DriverManager().SetUpDriver(new ChromeConfig());
+            // IWebDriver driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+             driver = new ChromeDriver(options);
+           // driver = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory);
             driver.Navigate().GoToUrl("https://cloud.google.com");
             Console.WriteLine("the page is opened");
-            driver.FindElement(By.XPath("//a[contains(text(),'See all 100+ products')]")).Click();
+            IWebElement webElement = driver.FindElement(By.XPath("//a[contains(text(),'See all 100+ products')]"));
+            actualResult = webElement.Text;
+            webElement.Click();
         }
 
         [Test]
         public void VerifyVMClass()
         {
-            Assert.AreEqual(2, 2, VerifyMessage);
+            Assert.AreEqual(actualResult, "See all 100+ products", VerifyMessage);
         }
 
         [TearDown]

@@ -4,9 +4,9 @@ namespace PrimeCircle
 {
     public class PrimeCircle
     {
-	public bool IsPrime(int candidate)
+	public void IsPrime(int candidate)
         {
-            throw new NotImplementedException("Please create a test first.");
+           
         }
     }
 }
