@@ -3,8 +3,8 @@ jobs:
   build:
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk:3.0
-      auth:
-      username: root
+        auth:
+          username: root
   
     steps:
       - checkout
